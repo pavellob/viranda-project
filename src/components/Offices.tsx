@@ -40,7 +40,7 @@ export function Offices({
       </li>
       <li>
         <Office name="Saint-Petersburg" invert={invert}>
-          Гатчинская 28, БЦ "Печатный двор", 5к306
+          Гатчинская 28, БЦ &quot;Печатный двор&quot;, 5к306
           <br />
           197110, Санкт-Петербург, Россия
         </Office>
