@@ -1,0 +1,135 @@
+import fountain from './fountain.jpg'
+import album1 from './album1.jpg'
+export const show = {
+  id: 'your-product-id',
+  item: {
+    id: 'your-show-id',
+    name: 'Мастер класс "Антистресс"',
+    description:
+      'Наблюдать эксперименты захватывающе интересно, но еще интереснее проверить результаты опытов на ощупь! На мастер-классе “Антистресс” дети сделают 3 разных субстанции, которые расслабляют и притягивают внимание детей и взрослых! Анстистресс из орбизов, искусственный снег, акваслайм - три тактильных удовольствия за 1 мастер-класс',
+    minAge: 4,
+    maxAge: 16,
+    minCapacity: 3, 
+    maxCapacity: 12, 
+    duration: 40, 
+    href: '/show/antistress',
+    showItems: [{
+        name: "Искусственный снег, увеличивающийся на глазах: покрасим его или оставим белым?",
+        description: ""
+      }, 
+      {
+        name: "Полимерные фигурки: одна жидкость застывает в другой, выберем форму и цвет!",
+      },
+      {
+        name: "Водяные шарики орбизы - сделаем из них мячик-антистресс, а что, если его заморозить?",
+      },
+      {
+        name: "Все субстанции можно забрать с собой",
+      },
+    ],
+    image: {
+      imageSrc: fountain,
+      imageAlt:
+        'Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.',
+    },
+    album: [
+      {
+        imageSrc: album1,
+        imageAlt:
+          'Walnut card tray with white powder coated steel divider and 3 punchout holes.',
+      },
+      {
+        imageSrc: album1,
+        imageAlt:
+          'Top down view of walnut card tray with embedded magnets and card groove.',
+      },
+      {
+        imageSrc: album1,
+        imageAlt:
+          'Side of walnut card tray with card groove and recessed card area.',
+      },
+      {
+        imageSrc: album1,
+        imageAlt:
+          'Walnut card tray filled with cards and card angled in dedicated groove.',
+      },
+    ],
+    requirements: [
+       'Открытая площадка для запуска фонтанов',
+       'Детям выдаются фартуки, однако рекомендуем одеть детей в одежду, на которую не критично посадить пятнышко',
+    ],
+    faqs: [{
+    question: 'What format are these icons?',
+    answer:
+      'The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code.',
+  },
+  {
+    question: 'Can I use the icons at different sizes?',
+    answer:
+      "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance.",
+  },],
+    createdAt: '2024-01-22T12:00:00Z', // Replace with the actual value
+    updatedAt: '2024-01-22T12:30:00Z', // Replace with the actual value
+    deletedAt: null, // Replace with the actual value if applicable
+  },
+  event: {
+    id: 'your-event-id',
+    name: 'Мастер класс "Антистресс"',
+    description: 'Event Description', // Replace with the actual value
+    date: '2024-01-22', // Replace with the actual value
+    startTime: '14:00:00', // Replace with the actual value
+    endTime: '15:00:00', // Replace with the actual value if applicable
+    duration: 40, // Replace with the actual value if applicable
+    createdAt: '2024-01-22T12:00:00Z', // Replace with the actual value
+    updatedAt: '2024-01-22T12:30:00Z', // Replace with the actual value
+    deletedAt: null, // Replace with the actual value if applicable
+  },
+  product: {
+    id: 'your-product-id',
+    name: 'Мастер класс "Антистресс"',
+    price: 5500, // Replace with the actual value
+    createdAt: '2024-01-22T12:00:00Z', // Replace with the actual value
+    updatedAt: '2024-01-22T12:30:00Z', // Replace with the actual value
+    deletedAt: null, // Replace with the actual value if applicable
+  },
+  reviews: [
+    {
+      id: 1,
+      rating: 5,
+      content: `
+        <p>This icon pack is just what I need for my latest project. There's an icon for just about anything I could ever need. Love the playful look!</p>
+      `,
+      createdAt: 'July 16, 2021',
+      client: {
+        name: 'Emily Selman',
+        avatarSrc:
+        'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+
+      }
+    },
+    {
+      id: 2,
+      rating: 3,
+      content: `
+        <p>Blown away by how polished this icon pack is. Everything looks so consistent and each SVG is optimized out of the box so I can use it directly with confidence. It would take me several hours to create a single icon this good, so it's a steal at this price.</p>
+      `,
+      createdAt: 'July 12, 2021',
+      client: {
+        name: 'Hector Gibbons',
+        avatarSrc:
+          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+      }
+    },
+
+],
+createdAt: '2024-01-22T13:00:00Z', // Replace with the actual value
+updatedAt: '2024-01-22T13:30:00Z', // Replace with the actual value
+deletedAt: null, // Replace with the actual value if applicable
+}
+
+export const metadata = {
+  title: `${show.client} Case Study`,
+  description: show.description,
+}
+
+<Show show={show} />
