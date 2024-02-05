@@ -6,8 +6,8 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Studio',
-    default: 'Studio - Award winning developer studio based in Denmark',
+    template: '%s - Viranda project',
+    default: 'Viranda - Развивающие программы и умные детские праздники  на Пхукете. Профессор Супер Гуд',
   },
 }
 
