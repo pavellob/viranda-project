@@ -19,7 +19,8 @@ import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
-import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import { type CaseStudy, type MDXEntry, loadCaseStudies, loadArticles } from '@/lib/mdx'
+import { PageLinks } from '@/components/PageLinks'
 
 const clients = [
   ['Phobia', logoPhobiaLight],
@@ -102,7 +103,7 @@ function CaseStudies({
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>Case study</span>
+                  <span>{caseStudy.service}</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
                   {caseStudy.title}
@@ -176,8 +177,12 @@ export const metadata: Metadata = {
     'Создаем среду, где дети учатся, играя. Уникальные умные празники и научное шоу на Пхукете и Санкт-Петербурге. Дополнительне образование по STEAM',
 }
 
+
+
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)
+  let blogArticles = (await loadArticles()).slice(0, 2)
+
 
   return (
     <>
@@ -194,6 +199,12 @@ export default async function Home() {
       </Container>
 
       <Services />
+      <PageLinks
+        className="mt-24 sm:mt-32 lg:mt-40"
+        title="Блог"
+        intro="Мы пишем о тенденциях в современном обучении, дополнительном образовании и конечно, новых опытах и шоу"
+        pages={blogArticles}
+      />
 
 
       <Clients />
@@ -202,80 +213,13 @@ export default async function Home() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
+        client={{ name: 'Megaday', logo: logoPhobiaDark }}
       >
-        The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user’s microphone without triggering one of
-        those annoying permission dialogs.
+        Лушее научное шоу на Пхукете. Если вам хочется, чтобы ваш праздник был ярким и запоминаешься, если вам хочется быть не просто зрителями, но участниками - рекомендую Viranda Project
       </Testimonial>
 
 
       <ContactSection />
     </>
   )
-}
-
-
-const products = [
-{
-  id: 1,
-  name: 'Basic Tee 8-Pack',
-  href: '#',
-  price: '$256',
-  description: 'Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.',
-  options: '8 colors',
-  imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg',
-  imageAlt: 'Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.',
-},
-{
-  id: 2,
-  name: 'Basic Tee',
-  href: '#',
-  price: '$32',
-  description: 'Look like a visionary CEO and wear the same black t-shirt every day.',
-  options: 'Black',
-  imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg',
-  imageAlt: 'Front of plain black t-shirt.',
-},
-// More products...
-]
-
-function ProductList() {
-return (
-  <div className="bg-white">
-    <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 className="sr-only">Products</h2>
-
-      <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white"
-          >
-            <div className="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
-              <img
-                src={product.imageSrc}
-                alt={product.imageAlt}
-                className="h-full w-full object-cover object-center sm:h-full sm:w-full"
-              />
-            </div>
-            <div className="flex flex-1 flex-col space-y-2 p-4">
-              <h3 className="text-sm font-medium text-gray-900">
-                <a href={product.href}>
-                  <span aria-hidden="true" className="absolute inset-0" />
-                  {product.name}
-                </a>
-              </h3>
-              <p className="text-sm text-gray-500">{product.description}</p>
-              <div className="flex flex-1 flex-col justify-end">
-                <p className="text-sm italic text-gray-500">{product.options}</p>
-                <p className="text-base font-medium text-gray-900">{product.price}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-)
 }

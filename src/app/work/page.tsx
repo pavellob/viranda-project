@@ -30,7 +30,7 @@ function CaseStudies({
     <Container className="mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Case studies
+          Портфолио
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
@@ -75,7 +75,7 @@ function CaseStudies({
                       href={caseStudy.href}
                       aria-label={`Read case study: ${caseStudy.client}`}
                     >
-                      Read case study
+                      Ознакомиться
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -137,9 +137,9 @@ function Clients() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Work',
+  title: 'Портфолио',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    'Мы всегда орентированы на работу с клиентом и готовы ответить на любые возникшие вопросы',
 }
 
 export default async function Work() {
@@ -148,13 +148,20 @@ export default async function Work() {
   return (
     <>
       <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        eyebrow="Портфолио"
+        title="Обучение, которое развлекает, развлечение, которое обучает"
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+        Опыт проведения детских научных шоу более 10 лет и высшее
+техническое и педагогическое образование позволяют
+самостоятельно придумывать новые, уникальные, зрелищные и
+        </p>
+        <p>
+        У всех праздников и занятий есть образовательная
+        составляющая: дети знакомятся с различными природными
+        явлениями и процессами
+        Красивый и качественный реквизит, который приятно держать в
+        руках, на который приятно смотреть
         </p>
       </PageIntro>
 
