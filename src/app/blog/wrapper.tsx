@@ -27,10 +27,10 @@ export default async function BlogArticleWrapper({
               {article.title}
             </h1>
             <time
-              dateTime={article.date}
+              dateTime={article.createdAt}
               className="order-first text-sm text-neutral-950"
             >
-              {formatDate(article.date)}
+              {formatDate(article.createdAt)}
             </time>
             <p className="mt-6 text-sm font-semibold text-neutral-950">
               by {article.author.name}, {article.author.role}
