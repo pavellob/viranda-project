@@ -20,6 +20,8 @@ import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
 import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
+
 
 function CaseStudies({
   caseStudies,
@@ -169,13 +171,12 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
+        client={{ name: 'Megaday', logo: logoPhobiaDark }}
       >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
+        Лушее научное шоу на Пхукете. Если вам хочется, чтобы ваш праздник был ярким и запоминаешься, если вам хочется быть не просто зрителями, но участниками - рекомендую Viranda Project
       </Testimonial>
 
-      <Clients />
+      {/* <Clients /> */}
 
       <ContactSection />
     </>

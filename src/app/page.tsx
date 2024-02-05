@@ -198,16 +198,9 @@ export default async function Home() {
         </FadeIn>
       </Container>
 
-      <Services />
-      <PageLinks
-        className="mt-24 sm:mt-32 lg:mt-40"
-        title="Блог"
-        intro="Мы пишем о тенденциях в современном обучении, дополнительном образовании и конечно, новых опытах и шоу"
-        pages={blogArticles}
-      />
 
 
-      <Clients />
+      {/* <Clients /> */}
 
       <CaseStudies caseStudies={caseStudies} />
 
@@ -218,6 +211,13 @@ export default async function Home() {
         Лушее научное шоу на Пхукете. Если вам хочется, чтобы ваш праздник был ярким и запоминаешься, если вам хочется быть не просто зрителями, но участниками - рекомендую Viranda Project
       </Testimonial>
 
+      <Services />
+      <PageLinks
+        className="mt-24 sm:mt-32 lg:mt-40"
+        title="Блог"
+        intro="Мы пишем о тенденциях в современном обучении, дополнительном образовании и конечно, новых опытах и шоу"
+        pages={blogArticles}
+      />
 
       <ContactSection />
     </>
