@@ -19,8 +19,14 @@ import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
-import { type CaseStudy, type MDXEntry, loadCaseStudies, loadArticles } from '@/lib/mdx'
-import { PageLinks } from '@/components/PageLinks'
+import {
+  type CaseStudy,
+  type MDXEntry,
+  loadCaseStudies,
+  loadArticles,
+  loadShowCases,
+} from '@/lib/mdx'
+import { PageLinks, PageType } from '@/components/PageLinks'
 
 const clients = [
   ['Phobia', logoPhobiaLight],
@@ -69,12 +75,10 @@ function CaseStudies({
 }) {
   return (
     <>
-      <SectionIntro
-        title="Наша работа"
-        className="mt-24 sm:mt-32 lg:mt-40"
-      >
+      <SectionIntro title="Наша работа" className="mt-24 sm:mt-32 lg:mt-40">
         <p>
-          Мы верим, что самое главное - это заинтересовать детей, раскрыть потенциал, скрытый в них самих.
+          Мы верим, что самое главное - это заинтересовать детей, раскрыть
+          потенциал, скрытый в них самих.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -127,9 +131,7 @@ function Services() {
         title="Развлечение, которое обучает. Обучение, которое развлекает."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
-        <p>
-        
-        </p>
+        <p></p>
       </SectionIntro>
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
@@ -144,26 +146,30 @@ function Services() {
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Научные  шоу и другие умные праздники ">
-              Мы проводим Научные шоу и другие умные праздники более 11 лет.
-              Мы знаем, как сделать ваш праздник уникальным и запоминающимся.
-              Шоу, мастер классы или интерактивные квесты! Развлекаясь - обучаемся!
-              Мы работаем с агенствами, а так же организуем праздники &quot;под ключ&quot;
+              Мы проводим Научные шоу и другие умные праздники более 11 лет. Мы
+              знаем, как сделать ваш праздник уникальным и запоминающимся. Шоу,
+              мастер классы или интерактивные квесты! Развлекаясь - обучаемся!
+              Мы работаем с агенствами, а так же организуем праздники &quot;под
+              ключ&quot;
             </ListItem>
             <ListItem title="Дополнительное образование">
-              На данный момент у нас 19 секций для детей до 16 лет, согласно идеалогии STEAM, на острове Пхукет. 
-              S - Science, T - Technic, E - Engineering, A - Art, M - Mathematic.
-              Робототехника и 3D моделирование, рисование и программирование, авторский курс &quot;Потомучки&quot; и многое другое.  
-              занятия проходят в нашем образовательном центе, так же мы сотрудничаем с детсадами и школами.
+              На данный момент у нас 19 секций для детей до 16 лет, согласно
+              идеалогии STEAM, на острове Пхукет. S - Science, T - Technic, E -
+              Engineering, A - Art, M - Mathematic. Робототехника и 3D
+              моделирование, рисование и программирование, авторский курс
+              &quot;Потомучки&quot; и многое другое. занятия проходят в нашем
+              образовательном центе, так же мы сотрудничаем с детсадами и
+              школами.
             </ListItem>
             <ListItem title="Детские и семейные лагеря">
-              Мы имеем огромный опыт организации детских лагерей.
-              Лагерь выходного дня, лагеря в школьные каникулы, семейные лагеря.
+              Мы имеем огромный опыт организации детских лагерей. Лагерь
+              выходного дня, лагеря в школьные каникулы, семейные лагеря.
             </ListItem>
             <ListItem title="Театрализированные шоу и квесты">
-              Мы тесно и давно связаны с театром. 
-              Раз в месяц мы выпускаем историю про Профессора Супер Гуд - 
-              чудаковатого ученого, который вместе с детьми познает мир.
-              Мы делаем замечательные квесты, в которых дети могут самостоятельно эксперементировать.
+              Мы тесно и давно связаны с театром. Раз в месяц мы выпускаем
+              историю про Профессора Супер Гуд - чудаковатого ученого, который
+              вместе с детьми познает мир. Мы делаем замечательные квесты, в
+              которых дети могут самостоятельно эксперементировать.
             </ListItem>
           </List>
         </div>
@@ -177,48 +183,68 @@ export const metadata: Metadata = {
     'Создаем среду, где дети учатся, играя. Уникальные умные празники и научное шоу на Пхукете и Санкт-Петербурге. Дополнительне образование по STEAM',
 }
 
-
-
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)
   let blogArticles = (await loadArticles()).slice(0, 2)
-
+  let shows = (await loadShowCases()).slice(0, 3).map((show) => {
+    return {
+      href: show.item.href,
+      createdAt: show.item.createdAt,
+      title: show.item.name,
+      description: show.item.description,
+      imageUrl: show.item.image.imageSrc,
+    }
+  })
 
   return (
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-          Умные детские праздники и развивающие программы на Пхукете
+            Умные детские праздники и развивающие программы на Пхукете
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-          Создаем среду, где дети смогут свободно выбирать как и чему учиться.
-        Пробовать, ошибаться, снова пробовать и получать от этого удовольствие.
+            Создаем среду, где дети смогут свободно выбирать как и чему учиться.
+            Пробовать, ошибаться, снова пробовать и получать от этого
+            удовольствие.
           </p>
         </FadeIn>
       </Container>
+      <Services />
 
 
+     
+
+      <PageLinks
+        className="mt-24 sm:mt-32 lg:mt-40"
+        title="Шоу и воркшопы"
+        intro="Мы делаем самые веселые умные праздники на Пхукете"
+        type={PageType.ImgBackground}
+        pages={shows}
+      />
 
       {/* <Clients /> */}
-
-      <CaseStudies caseStudies={caseStudies} />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Megaday', logo: logoPhobiaDark }}
       >
-        Лушее научное шоу на Пхукете. Если вам хочется, чтобы ваш праздник был ярким и запоминаешься, если вам хочется быть не просто зрителями, но участниками - рекомендую Viranda Project
+        Лушее научное шоу на Пхукете. Если вам хочется, чтобы ваш праздник был
+        ярким и запоминаешься, если вам хочется быть не просто зрителями, но
+        участниками - рекомендую Viranda Project
       </Testimonial>
 
-      <Services />
+      <CaseStudies caseStudies={caseStudies} />
+
+ 
+
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
         title="Блог"
         intro="Мы пишем о тенденциях в современном обучении, дополнительном образовании и конечно, новых опытах и шоу"
         pages={blogArticles}
       />
-
+   
       <ContactSection />
     </>
   )
