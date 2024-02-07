@@ -7,32 +7,25 @@ import { socialMediaProfiles } from '@/components/SocialMedia'
 
 const navigation = [
   {
-    title: 'Work',
+    title: 'Услуги',
     links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'Phobia', href: '/work/phobia' },
-      {
-        title: (
-          <>
-            See all <span aria-hidden="true">&rarr;</span>
-          </>
-        ),
-        href: '/work',
-      },
+      { title: 'Портфолио', href: '/work/' },
+      { title: 'Шоу и мастерклассы', href: '/show' },
+      { title: 'Образование', href: '/education' },
+      { title: 'Лагеря', href: '/camps' },
     ],
   },
   {
-    title: 'Company',
+    title: 'Информация',
     links: [
-      { title: 'About', href: '/about' },
+      { title: 'О нас', href: '/about' },
       { title: 'Process', href: '/process' },
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact us', href: '/contact' },
+      { title: 'Блог', href: '/blog' },
+      { title: 'Написать нам', href: '/contact' },
     ],
   },
   {
-    title: 'Connect',
+    title: 'Связь',
     links: socialMediaProfiles,
   },
 ]
@@ -117,7 +110,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           <Navigation />
           <div className="flex lg:justify-end">
-            <NewsletterForm />
+            {/* <NewsletterForm /> */}
           </div>
         </div>
         <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">

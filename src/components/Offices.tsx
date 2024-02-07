@@ -38,11 +38,26 @@ export function Offices({
           83130, Phuket, Chalong, Thailand
         </Office>
       </li>
-      <li>
+      {/* <li>
         <Office name="Saint-Petersburg" invert={invert}>
           Гатчинская 28, БЦ &quot;Печатный двор&quot;, 5к306
           <br />
           197110, Санкт-Петербург, Россия
+        </Office>
+      </li> */}
+      <li>
+        <Office name="Phone" invert={invert}>
+          +66 0960756027
+        </Office>
+      </li>
+      <li>
+        <Office name="Telegram" invert={invert}>
+          @svetlanalob
+        </Office>
+      </li>
+      <li>
+        <Office name="Email" invert={invert}>
+          nauka.pro2021@gmail.com
         </Office>
       </li>
     </ul>

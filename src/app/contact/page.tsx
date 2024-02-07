@@ -22,7 +22,7 @@ function ContactDetails() {
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
-      <Border className="mt-16 pt-16">
+      {/* <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Свяжитесь с нами
         </h2>
@@ -45,11 +45,11 @@ function ContactDetails() {
             </div>
           ))}
         </dl>
-      </Border>
+      </Border> */}
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Follow us
+          Наши соцсети
         </h2>
         <SocialMedia className="mt-6" />
       </Border>
@@ -66,7 +66,7 @@ export default function Contact() {
   return (
     <>
       <PageIntro eyebrow="Свяжитесь с нами" title="Давайте работать вместе">
-        <p>Развлечение, которое обучает. Обучение, которое развлекает.</p>
+        <p>Viranda project сотрудничает с частными лицами, агенствами и образовательными учреждениями с целью предоставления качественных услуг в сфере развлечений и дополнительного образования. <br/>Варианты сотрудничества с агенствами образовательными организациями высылаются по запросу</p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
