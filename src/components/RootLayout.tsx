@@ -143,17 +143,16 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/about">О нас</NavigationItem>
-        <NavigationItem href="/process">Как мы работаем</NavigationItem>
+      <NavigationItem href="/show">Праздники</NavigationItem>
+        <NavigationItem href="/work">Образование</NavigationItem>
       </NavigationRow>
-  <NavigationRow>
-        <NavigationItem href="/blog">Блог</NavigationItem>
+      <NavigationRow>
+        <NavigationItem href="/process">Детские лагеря</NavigationItem>
         <NavigationItem href="/process">Профессор Супер Гуд</NavigationItem>
       </NavigationRow>
-
       <NavigationRow>
-        <NavigationItem href="/work">Занятия</NavigationItem>
-        <NavigationItem href="/show">Шоу</NavigationItem>
+        <NavigationItem href="/blog">Блог</NavigationItem>
+        <NavigationItem href="/process">О нас</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -200,8 +199,8 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
             expanded={expanded}
             onToggle={() => {
               setExpanded((expanded) => !expanded)
-              window.setTimeout(
-                () => closeRef.current?.focus({ preventScroll: true }),
+              window.setTimeout(() =>
+                closeRef.current?.focus({ preventScroll: true }),
               )
             }}
           />
@@ -226,8 +225,8 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
                 expanded={expanded}
                 onToggle={() => {
                   setExpanded((expanded) => !expanded)
-                  window.setTimeout(
-                    () => openRef.current?.focus({ preventScroll: true }),
+                  window.setTimeout(() =>
+                    openRef.current?.focus({ preventScroll: true }),
                   )
                 }}
               />

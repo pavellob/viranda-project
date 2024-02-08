@@ -7,23 +7,32 @@ import { socialMediaProfiles } from '@/components/SocialMedia'
 
 const navigation = [
   {
-    title: 'Услуги',
+    title: 'Наша работа',
     links: [
-      { title: 'Портфолио', href: '/work/' },
       { title: 'Шоу и мастерклассы', href: '/show' },
       { title: 'Образование', href: '/education' },
       { title: 'Лагеря', href: '/camps' },
+      { title: 'Профессор Супер Гуд', href: '/camps' },
     ],
   },
   {
-    title: 'Информация',
+    title: 'Сотрудничество',
     links: [
-      { title: 'О нас', href: '/about' },
-      { title: 'Process', href: '/process' },
-      { title: 'Блог', href: '/blog' },
+      { title: 'Частные лица', href: '/about' },
+      { title: 'Школы и детские сады', href: '/about' },
+      { title: 'Эвент агенства', href: '/process' },
       { title: 'Написать нам', href: '/contact' },
     ],
-  },
+  },  
+  {
+    title: 'Информация',
+    links: [
+      { title: 'Наша история', href: '/about' },
+      { title: 'Наши принципы', href: '/about' },
+      { title: 'Блог', href: '/blog' },
+      { title: 'Портфолио', href: '/work/' },
+    ],
+  },  
   {
     title: 'Связь',
     links: socialMediaProfiles,
@@ -33,7 +42,7 @@ const navigation = [
 function Navigation() {
   return (
     <nav>
-      <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+      <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-4">
         {navigation.map((section, sectionIndex) => (
           <li key={sectionIndex}>
             <div className="font-display text-sm font-semibold tracking-wider text-neutral-950">
@@ -107,11 +116,9 @@ export function Footer() {
   return (
     <Container as="footer" className="mt-24 w-full sm:mt-32 lg:mt-40">
       <FadeIn>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16">
           <Navigation />
-          <div className="flex lg:justify-end">
-            {/* <NewsletterForm /> */}
-          </div>
+
         </div>
         <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home">
