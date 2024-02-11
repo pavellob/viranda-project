@@ -144,15 +144,15 @@ function Navigation() {
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
       <NavigationItem href="/show">Праздники</NavigationItem>
-        <NavigationItem href="/work">Образование</NavigationItem>
+        <NavigationItem href="/education">Образование</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Детские лагеря</NavigationItem>
-        <NavigationItem href="/process">Профессор Супер Гуд</NavigationItem>
+        <NavigationItem href="/camps">Детские лагеря</NavigationItem>
+        <NavigationItem href="/superGood">Профессор Супер Гуд</NavigationItem>
       </NavigationRow>
       <NavigationRow>
         <NavigationItem href="/blog">Блог</NavigationItem>
-        <NavigationItem href="/process">О нас</NavigationItem>
+        <NavigationItem href="/about">О нас</NavigationItem>
       </NavigationRow>
     </nav>
   )

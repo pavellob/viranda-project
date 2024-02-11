@@ -13,9 +13,6 @@ import { List, ListItem } from '@/components/List'
 import imageLaptop from '@/images/laptop.jpg'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
-
-
-
 function ContactDetails() {
   return (
     <FadeIn>
@@ -23,7 +20,8 @@ function ContactDetails() {
         Для связи
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        У нас открыты офисы в России и Таиланде. Вы можете связаться с нами по телефону или эллектронной почте удобным вам способом.
+        Вы можете связаться с нами по телефону или эллектронной почте удобным
+        вам способом. Более всего мы любим Telegram
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
@@ -65,6 +63,13 @@ function ContactDetails() {
 function Services() {
   return (
     <>
+      <PageIntro eyebrow="Свяжитесь с нами" title="Давайте работать вместе">
+        <p>
+          Viranda project сотрудничает с частными лицами, агенствами и
+          образовательными учреждениями с целью предоставления качественных
+          услуг в сфере развлечений и дополнительного образования.
+        </p>
+      </PageIntro>
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
@@ -141,20 +146,15 @@ export const metadata: Metadata = {
 }
 
 export default function Contact() {
-
   return (
     <>
-
+      <Services />
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
           <ContactForm />
           <ContactDetails />
         </div>
       </Container>
-      <PageIntro eyebrow="Свяжитесь с нами" title="Давайте работать вместе">
-        <p>Viranda project сотрудничает с частными лицами, агенствами и образовательными учреждениями с целью предоставления качественных услуг в сфере развлечений и дополнительного образования.</p>
-      </PageIntro>
-          <Services />
     </>
   )
 }

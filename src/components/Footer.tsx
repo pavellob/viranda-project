@@ -20,7 +20,7 @@ const navigation = [
     links: [
       { title: 'Частные лица', href: '/about' },
       { title: 'Школы и детские сады', href: '/about' },
-      { title: 'Эвент агенства', href: '/process' },
+      { title: 'Эвент агенства', href: '/contact' },
       { title: 'Написать нам', href: '/contact' },
     ],
   },  

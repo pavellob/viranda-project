@@ -20,8 +20,8 @@ function ContactDetails() {
         Для связи
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        У нас открыты офисы в России и Таиланде. Вы можете связаться с нами по
-        телефону или эллектронной почте удобным вам способом.
+        Вы можете связаться с нами по телефону или эллектронной почте удобным
+        вам способом.
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
@@ -192,23 +192,12 @@ export default function Contact() {
   return (
     <>
       <PageIntro
-        eyebrow="Давайте работать вместе"
+        eyebrow="Мы работаем для вас"
         title="Сотрудничество с школами, детскими садами и образовательными центрами"
       >
         <p>
-          Viranda project сотрудничает с образовательными учреждениями с целью
-          предоставления качественных услуг в области дополнительного
-          образования в рамках STEAM-подхода. Варианты сотрудничества с
-          образовательными организациями:
-          <Link
-          target='blank'
-          href='/Brand Guide Viranda.pdf'
-          className="mt-6 flex gap-x-3 text-base font-semibold text-neutral-950 transition hover:text-neutral-700"
-        >
-          Коммерческое предложение
-          <InboxArrowDownIcon className="w-6 flex-none" />
-          <span className="absolute inset-0" />
-        </Link>
+          Мы ждем вас на занятиях, представлениях и мастерклассах. Мы с радостью
+          проведем незабываемый день рожения или другой празник для вас.
         </p>
       </PageIntro>
       <Legend>

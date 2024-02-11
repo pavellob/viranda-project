@@ -15,48 +15,12 @@ import imageLaptop from '@/images/laptop.jpg'
 import imageMeeting from '@/images/meeting.jpg'
 import imageWhiteboard from '@/images/whiteboard.jpg'
 import { StatList, StatListItem } from '@/components/StatList'
+import { LegendSection } from '@/components/Legend'
 
-function Section({
-  title,
-  image,
-  children,
-}: {
-  title: string
-  image: React.ComponentPropsWithoutRef<typeof StylizedImage>
-  children: React.ReactNode
-}) {
-  return (
-    <Container className="group/section [counter-increment:section]">
-      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
-        <div className="flex justify-center">
-          <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
-            <StylizedImage
-              {...image}
-              sizes="(min-width: 1024px) 41rem, 31rem"
-              className="justify-center lg:justify-end lg:group-even/section:justify-start"
-            />
-          </FadeIn>
-        </div>
-        <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
-          <FadeIn>
-            <div
-              className="font-display text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)]"
-              aria-hidden="true"
-            />
-            <h2 className="mt-2 font-display text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl">
-              {title}
-            </h2>
-            <div className="mt-6">{children}</div>
-          </FadeIn>
-        </div>
-      </div>
-    </Container>
-  )
-}
 
 function Edutament() {
   return (
-    <Section title="Проводи весело время и при этом учись и развивайся - возможно!" image={{ src: imageWhiteboard }}>
+    <LegendSection title="Проводи весело время и при этом учись и развивайся - возможно!" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
        
         <p>
@@ -75,13 +39,13 @@ function Edutament() {
         <TagListItem>Proofs-of-concept</TagListItem>
         <TagListItem>Forensic audit</TagListItem>
       </TagList> */}
-    </Section>
+    </LegendSection>
   )
 }
 
 function Flex() {
   return (
-    <Section title="Образование - это гибкая система, развивающаяся вместе с быстро
+    <LegendSection title="Образование - это гибкая система, развивающаяся вместе с быстро
     меняющимся миром!" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
@@ -96,13 +60,13 @@ function Flex() {
       </div>
 
 
-    </Section>
+    </LegendSection>
   )
 }
 
 function Gadgets() {
   return (
-    <Section title="Не нужно бороться с гаджетами, теперь это часть нашей жизни, как
+    <LegendSection title="Не нужно бороться с гаджетами, теперь это часть нашей жизни, как
     электричество!" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
@@ -115,14 +79,14 @@ function Gadgets() {
             полезное.
         </p>
       </div>
-    </Section>
+    </LegendSection>
   )
 }
 
 
 function Socailization() {
   return (
-    <Section title="Дополнительное образование как площадка для социального развития,
+    <LegendSection title="Дополнительное образование как площадка для социального развития,
     особенно в условиях эмиграции." image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
@@ -136,14 +100,14 @@ function Socailization() {
             знаний, но и ключом к успешной адаптации в новой среде.
         </p>
       </div>
-    </Section>
+    </LegendSection>
   )
 }
 
 
 function Future() {
   return (
-    <Section title="Можно добиться многого, главное - это желание, интерес и
+    <LegendSection title="Можно добиться многого, главное - это желание, интерес и
     настойчивость!" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
@@ -172,7 +136,7 @@ function Future() {
           uses, you can expect a lifetime of support, and invoices, from us.
         </ListItem>
       </List> */}
-    </Section>
+    </LegendSection>
   )
 }
 
