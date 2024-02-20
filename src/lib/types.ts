@@ -27,7 +27,7 @@ export type IMetaNode = {
   name: Scalars['String']['output'];
   description: Scalars['String']['output'];
   image: Image;
-  album?: Maybe<Array<Maybe<Image>>>;
+  album?: Maybe<Array<Image>>;
   minAge?: Maybe<Scalars['Int']['output']>;
   maxAge?: Maybe<Scalars['Int']['output']>;
   minCapacity: Scalars['Int']['output'];

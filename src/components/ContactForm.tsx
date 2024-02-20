@@ -47,7 +47,7 @@ function RadioInput({
 }
 
 
-export function ContactForm() {
+export function ContactForm({ title }: { title?: string}) {
   const searchParams = useSearchParams()
 
   const [formValues, setFormValues] = useState({
@@ -55,7 +55,7 @@ export function ContactForm() {
     email: '',
     phone: '',
     message: '',
-   // show: '',
+    show: '',
   })
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export function ContactForm() {
       email: searchParams.get('email') || '',
       phone: searchParams.get('phone') || '',
       message: searchParams.get('message') || '',
-      //show: searchParams.get('show') || '',
+      show: searchParams.get('show') || '',
     })
   }, [searchParams])
 
@@ -131,7 +131,7 @@ export function ContactForm() {
     <FadeIn className="lg:order-last">
       <form>
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Ваш запрос
+          { title || 'Ваш запрос' }
         </h2>
         <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
           <TextInput label="Имя" name="name"  value={formValues.name} onChange={handleInputChange}/>
@@ -152,14 +152,14 @@ export function ContactForm() {
             value={formValues.phone}
             onChange={handleInputChange}
           />
-           {/* <DropdownInput
+           <DropdownInput
             label="Шоу"
             name="show"
             options={['Crio Show', 'Cola-Mentos Show', 'Science Show']}
             value={formValues.show}
 
             onChange={handleInputChange}
-          /> */}
+          />
           <TextInput
             label="Сообщение"
             name="message"
