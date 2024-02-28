@@ -210,17 +210,11 @@ export default async function Home() {
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Научные шоу и Умные праздники.
+          <h1 className="font-display text-6xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+            Умные детские праздники и развивающие программы на Пхукете
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            Мы проводим научные шоу и мастер-классы для детей и подростков уже
-            более 10 лет — наша команда знает, как сделать праздник интересным
-            для каждого! Программа шоу разработана таким образом, чтобы не
-            только радовать зрителей яркими спецэффектами, но и обучать их
-            новому, стимулировать исследовательский интерес и научное
-            любопытство. Мастер-классы и шоу Viranda project развивают в детях
-            наблюдательность, логическое мышление и коммуникативные навыки.
+          Мы создаем условия, в которых дети получают актуальные знания о мире в рамках STEAM-подхода. Дружелюбно и в игровой форме.
           </p>
         </FadeIn>
       </Container>

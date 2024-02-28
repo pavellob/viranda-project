@@ -1,11 +1,12 @@
 import { useSearchParams } from 'next/navigation' // Import useSearchParams from 'next/router'
 import React, { useEffect, useState } from 'react'
 
-type FormData = {
+export type FormData = {
   [key: string]: string
 }
 
 export type FormProps = {
+  orderOptions: FormData
   formData: FormData
   onInputChange: (name: string, value: string) => void
   onSubmit: () => void

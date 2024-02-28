@@ -10,13 +10,12 @@ import { FadeIn } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { formatDate } from '@/lib/formatDate'
 import { MDXEntry, loadArticles, loadShowCases } from '@/lib/mdx'
-import { Blockquote } from '@/components/Blockquote'
 import { Show, ShowEventProduct } from '@/lib/types'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 
 export const metadata: Metadata = {
-  title: 'Show',
-  description: 'Show list that we provide',
+  title: 'Научные шоу и Мастер-классы',
+  description: 'Уникальные активности и зрелищные шоу',
 }
 function ShowCases({
   showProducts,

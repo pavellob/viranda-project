@@ -38,7 +38,7 @@ export function Show({ show }: { show: ShowEventProduct }) {
 
   return (
     <>
-      <OrderDialog isOpen={open} onClose={() => setOpen(false)} />
+      <OrderDialog isOpen={open} onClose={() => setOpen(false)} orderOptions={{}}/>
       <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         {/* Product */}
         <div className="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
@@ -64,7 +64,7 @@ export function Show({ show }: { show: ShowEventProduct }) {
                   Описание
                 </h2>
               </div>
-
+{/* 
               <div>
                 <h3 className="sr-only">Reviews</h3>
                 <div className="flex items-center">
@@ -82,7 +82,7 @@ export function Show({ show }: { show: ShowEventProduct }) {
                   ))}
                 </div>
                 <p className="sr-only">{reviewsAverage} out of 5 stars</p>
-              </div>
+              </div> */}
             </div>
 
             <p className="mt-6 text-gray-500">{show.item.description}</p>
