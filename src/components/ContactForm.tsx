@@ -55,7 +55,7 @@ export function ContactForm({ title }: { title?: string}) {
     email: '',
     phone: '',
     message: '',
-    show: '',
+    //show: '',
   })
 
   useEffect(() => {
@@ -65,12 +65,12 @@ export function ContactForm({ title }: { title?: string}) {
       email: searchParams.get('email') || '',
       phone: searchParams.get('phone') || '',
       message: searchParams.get('message') || '',
-      show: searchParams.get('show') || '',
+      //show: searchParams.get('show') || '',
     })
   }, [searchParams])
 
   async function postData(event: any) {
-   // event.preventDefault()
+    //event.preventDefault()
     const url = '/api/send'
   
     const response = await fetch(url, {
@@ -152,14 +152,14 @@ export function ContactForm({ title }: { title?: string}) {
             value={formValues.phone}
             onChange={handleInputChange}
           />
-           <DropdownInput
+           {/* <DropdownInput
             label="Шоу"
             name="show"
             options={['Crio Show', 'Cola-Mentos Show', 'Science Show']}
             value={formValues.show}
 
             onChange={handleInputChange}
-          />
+          /> */}
           <TextInput
             label="Сообщение"
             name="message"

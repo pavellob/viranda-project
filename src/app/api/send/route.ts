@@ -7,6 +7,7 @@ export const dynamic = 'force-dynamic'
 const RESEND_API_KEY = 're_LnNSUqB2_86WXGya7hWjrMBpWboSDKGiW'
 
 export async function POST(req: Request) {
+  console.log("FFFFFF")
   try {
     // Get the body from the request
     const { name, email, budget, phone, message } = await req.json()

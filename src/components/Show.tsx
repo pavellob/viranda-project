@@ -9,6 +9,7 @@ import { ShowEventProduct } from '@/lib/types'
 import { GrayscaleTransitionImage } from './GrayscaleTransitionImage'
 import { LinkIcon } from '@heroicons/react/24/outline'
 import ImageList from './ImageList'
+import { Button } from './Button'
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -31,12 +32,12 @@ export function Show({ show }: { show: ShowEventProduct }) {
 
   const reviewsAverage =
     show.reviews.reduce((sum, review) => {
-      sum += sum
+      sum += review.rating
       return sum
     }, 0) / show.reviews.length
 
   return (
-    <div className="bg-white">
+    <>
       <OrderDialog isOpen={open} onClose={() => setOpen(false)} />
       <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         {/* Product */}
@@ -86,23 +87,13 @@ export function Show({ show }: { show: ShowEventProduct }) {
 
             <p className="mt-6 text-gray-500">{show.item.description}</p>
 
-            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-              <button
-                onClick={() => setOpen(true)}
-                type="button"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-              >
-                Купить за {show.product.price}฿
-              </button>
-              <button
-                onClick={() => {
+            <div className="mt-10 flex gap-x-6 gap-y-4 s">
+              <Button onClick={() => {
                   setOpen(true)
                 }}
-                type="button"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-50 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-              >
-                Заказать звонок
-              </button>
+                title='Заказать шоу'>
+                  Заказать шоу
+                </Button>
             </div>
 
             <div className="mt-10 border-t border-gray-200 pt-10">
@@ -259,6 +250,6 @@ export function Show({ show }: { show: ShowEventProduct }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

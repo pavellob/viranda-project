@@ -16,8 +16,7 @@ import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 
 export const metadata: Metadata = {
   title: 'Show',
-  description:
-    'Show list that we provide',
+  description: 'Show list that we provide',
 }
 function ShowCases({
   showProducts,
@@ -28,7 +27,7 @@ function ShowCases({
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="sr-only">showProducts</h2>
-  
+
         <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
           {showProducts.map((product) => (
             <div
@@ -49,10 +48,18 @@ function ShowCases({
                     {product.item.name}
                   </a>
                 </h3>
-                <p className="text-sm text-gray-500">{product.item.description}</p>
+                <p className="text-sm text-gray-500">
+                  {product.item.description}
+                </p>
                 <div className="flex flex-1 flex-col justify-end">
-                  <p className="text-sm italic text-gray-500">{product.event.duration} минут / {product.item.minCapacity} - {product.item.maxCapacity} человек / {product.item.minAge} - {product.item.maxAge} лет   </p>
-                  <p className="text-base font-medium text-gray-900">{product.product.price}฿</p>
+                  <p className="text-sm italic text-gray-500">
+                    {product.event.duration} минут / {product.item.minCapacity}{' '}
+                    - {product.item.maxCapacity} человек / {product.item.minAge}{' '}
+                    - {product.item.maxAge} лет{' '}
+                  </p>
+                  <p className="text-base font-medium text-gray-900">
+                    {product.product.price}฿
+                  </p>
                 </div>
               </div>
             </div>
@@ -61,21 +68,29 @@ function ShowCases({
       </div>
     </div>
   )
-  }
-  
+}
+
 export default async function Show() {
   let showProducts = await loadShowCases()
 
   return (
     <>
-      <PageIntro eyebrow="Шоу программы и мастер классы" title="Уникальные активности и зрелещные шоу">
+      <PageIntro
+        eyebrow="Научные шоу и Мастер-классы"
+        title="Уникальные активности и зрелещные шоу"
+      >
         <p>
-          Мы делаем научные шоу уже более 10 лет и знаем, как сделать праздник интересным для всех. Наши программы не только интересны, но и познавательны.
+          Мы проводим научные шоу и мастер-классы для детей и подростков уже
+          более 10 лет — наша команда знает, как сделать праздник интересным для
+          каждого! Программа шоу разработана таким образом, чтобы не только
+          радовать зрителей яркими спецэффектами, но и обучать их новому,
+          стимулировать исследовательский интерес и научное любопытство.
+          Мастер-классы и шоу Viranda project развивают в детях
+          наблюдательность, логическое мышление и коммуникативные навыки.
         </p>
       </PageIntro>
 
       <ShowCases showProducts={showProducts} />
-
 
       <ContactSection />
     </>
