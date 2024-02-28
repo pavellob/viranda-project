@@ -9,7 +9,7 @@ import withSubmitAction, {FormData} from './withContactFormHandler';
 
 
 
-export function OrderDialog({isOpen, onClose, orderOptions}: {isOpen: boolean, onClose: Function, orderOptions: FormData}) {
+export function OrderDialog({isOpen, onClose}: {isOpen: boolean, onClose: Function}) {
   const [open, setOpen] = useState(isOpen)
   
   const cancelButtonRef = useRef(null)
@@ -53,7 +53,7 @@ export function OrderDialog({isOpen, onClose, orderOptions}: {isOpen: boolean, o
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                 <div className="text-center mx-auto">
-                  <ShowOrderFormWithHandler title='форма заказа' orderOptions={orderOptions} formData={{}} onInputChange={()=>{}} onSubmit={()=>{console.log("hello")}}/> 
+                  <ShowOrderFormWithHandler title='форма заказа' formData={{}} onInputChange={()=>{}} onSubmit={()=>{console.log("hello")}}/> 
                 </div>
                 {/* <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
                   <button

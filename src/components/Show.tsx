@@ -10,6 +10,8 @@ import { GrayscaleTransitionImage } from './GrayscaleTransitionImage'
 import { LinkIcon } from '@heroicons/react/24/outline'
 import ImageList from './ImageList'
 import { Button } from './Button'
+import {FormData} from './withContactFormHandler';
+
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -27,9 +29,8 @@ function copyLink() {
 }
 
 
-export function Show({ show }: { show: ShowEventProduct }) {
+export function Show({ show, orderOptions }: { show: ShowEventProduct, orderOptions: any }) {
   const [open, setOpen] = useState(false)
-
   const reviewsAverage =
     show.reviews.reduce((sum, review) => {
       sum += review.rating
@@ -37,8 +38,8 @@ export function Show({ show }: { show: ShowEventProduct }) {
     }, 0) / show.reviews.length
 
   return (
-    <>
-      <OrderDialog isOpen={open} onClose={() => setOpen(false)} orderOptions={{}}/>
+    <div>
+      <OrderDialog isOpen={open} onClose={() => setOpen(false)}/>
       <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         {/* Product */}
         <div className="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
@@ -252,6 +253,6 @@ export function Show({ show }: { show: ShowEventProduct }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

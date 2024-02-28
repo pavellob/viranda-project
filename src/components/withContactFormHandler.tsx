@@ -1,3 +1,4 @@
+import { loadShowCases } from '@/lib/mdx'
 import { useSearchParams } from 'next/navigation' // Import useSearchParams from 'next/router'
 import React, { useEffect, useState } from 'react'
 
@@ -6,7 +7,6 @@ export type FormData = {
 }
 
 export type FormProps = {
-  orderOptions: FormData
   formData: FormData
   onInputChange: (name: string, value: string) => void
   onSubmit: () => void
@@ -45,10 +45,24 @@ const withSubmitAction = <P extends FormProps>(
     const searchParams = useSearchParams()
     const [formData, setFormData] = useState<FormData>({})
 
+
     useEffect(() => {
       const queryParams = Object.fromEntries(searchParams.entries()) // Convert URLSearchParams to object
       setFormData(queryParams) // Set form data from URL search parameters
     }, [searchParams])
+
+    // useEffect(() => {
+    //   let fetchShowCases = async () => {
+    //     const showProducts = await loadShowCases()
+    //     setOrderOptions(
+    //       showProducts.map((item) => ({
+    //         label: item.item.name,
+    //         value: item.item.id,
+    //       })),
+    //     ) // Set form data from URL search parameters
+    //   }
+    //   fetchShowCases()
+    // }, [])
 
     const handleInputChange = (name: string, value: string) => {
       setFormData((prevData) => ({
@@ -60,18 +74,17 @@ const withSubmitAction = <P extends FormProps>(
     const handleSubmit = (event: any) => {
       event.preventDefault()
       postData(formData).then(() => {
-        event.target.submit();
+        event.target.submit()
         props.onSubmit && props.onSubmit()
       })
     }
 
-    const p: P = {
+    const p = {
       onInputChange: handleInputChange,
       formData,
       onSubmit: handleSubmit,
     } as P
-
-    return <WrappedComponent {...p}  />
+    return <WrappedComponent {...p} />
   }
   return WithSubmitAction
 }
