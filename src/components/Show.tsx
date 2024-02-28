@@ -128,6 +128,18 @@ export function Show({ show }: { show: ShowEventProduct }) {
             <Tab.Group as="div">
               <div className="border-b border-gray-200">
                 <Tab.List className="-mb-px flex space-x-8">
+                <Tab
+                    className={({ selected }) =>
+                      classNames(
+                        selected
+                          ? 'border-indigo-600 text-indigo-600'
+                          : 'border-transparent text-gray-700 hover:border-gray-300 hover:text-gray-800',
+                        'whitespace-nowrap border-b-2 py-6 text-sm font-medium',
+                      )
+                    }
+                  >
+                    Фото
+                  </Tab>
                   <Tab
                     className={({ selected }) =>
                       classNames(
@@ -152,22 +164,31 @@ export function Show({ show }: { show: ShowEventProduct }) {
                   >
                     FAQ
                   </Tab>
-                  <Tab
-                    className={({ selected }) =>
-                      classNames(
-                        selected
-                          ? 'border-indigo-600 text-indigo-600'
-                          : 'border-transparent text-gray-700 hover:border-gray-300 hover:text-gray-800',
-                        'whitespace-nowrap border-b-2 py-6 text-sm font-medium',
-                      )
-                    }
-                  >
-                    Фото
-                  </Tab>
+                  
                 </Tab.List>
               </div>
               <Tab.Panels as={Fragment}>
-                <Tab.Panel className="-mb-10">
+              <Tab.Panel className="pt-10">
+                  <h3 className="sr-only">Фото</h3>
+                  <ImageList images={show.item.album}/>
+                </Tab.Panel>
+                <Tab.Panel className="text-sm text-gray-500">
+                  <h3 className="sr-only">Часто задаваемые вопросы</h3>
+
+                  <dl>
+                    {(show.item.faqs || []).map((faq) => (
+                      <Fragment key={faq.question}>
+                        <dt className="mt-10 font-medium text-gray-900">
+                          {faq.question}
+                        </dt>
+                        <dd className="prose prose-sm mt-2 max-w-none text-gray-500">
+                          <p>{faq.answer}</p>
+                        </dd>
+                      </Fragment>
+                    ))}
+                  </dl>
+                </Tab.Panel>
+                <Tab.Panel className="pt-10">
                   <h3 className="sr-only">Отзывы клиентов</h3>
 
                   {show.reviews.map((review, reviewIdx) => (
@@ -224,27 +245,8 @@ export function Show({ show }: { show: ShowEventProduct }) {
                   ))}
                 </Tab.Panel>
 
-                <Tab.Panel className="text-sm text-gray-500">
-                  <h3 className="sr-only">Часто задаваемые вопросы</h3>
+                
 
-                  <dl>
-                    {(show.item.faqs || []).map((faq) => (
-                      <Fragment key={faq.question}>
-                        <dt className="mt-10 font-medium text-gray-900">
-                          {faq.question}
-                        </dt>
-                        <dd className="prose prose-sm mt-2 max-w-none text-gray-500">
-                          <p>{faq.answer}</p>
-                        </dd>
-                      </Fragment>
-                    ))}
-                  </dl>
-                </Tab.Panel>
-
-                <Tab.Panel className="pt-10">
-                  <h3 className="sr-only">Фото</h3>
-                  <ImageList images={show.item.album}/>
-                </Tab.Panel>
               </Tab.Panels>
             </Tab.Group>
           </div>

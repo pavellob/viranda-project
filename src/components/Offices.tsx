@@ -47,7 +47,7 @@ export function Offices({
       </li> */}
       <li>
         <Office name="Phone" invert={invert}>
-          +66 0960756027
+          +66 0838406145
         </Office>
       </li>
       <li>
