@@ -45,9 +45,14 @@ const withSubmitAction = <P extends FormProps>(
     const searchParams = useSearchParams()
     const [formData, setFormData] = useState<FormData>({})
 
-
     useEffect(() => {
       const queryParams = Object.fromEntries(searchParams.entries()) // Convert URLSearchParams to object
+      if (!Object.keys(queryParams).some((p) => p === 'show')) {
+        const showValue = props.orderOptions
+          ?.filter((opt) => opt.selected)
+          .shift()?.value
+        if (showValue) queryParams.show = showValue
+      }
       setFormData(queryParams) // Set form data from URL search parameters
     }, [searchParams])
 
@@ -80,7 +85,7 @@ const withSubmitAction = <P extends FormProps>(
     }
 
     const p = {
-      orderOptions : props.orderOptions,
+      orderOptions: props.orderOptions,
       onInputChange: handleInputChange,
       formData,
       onSubmit: handleSubmit,

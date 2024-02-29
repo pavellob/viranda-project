@@ -12,7 +12,6 @@ export async function POST(req: Request) {
     const { name, email, show, phone, message } = await req.json()
     // Make a POST request to Resend API
     const resendApiUrl = 'https://api.resend.com/emails'
-
     const response = await fetch(resendApiUrl, {
       method: 'POST',
       headers: {
@@ -20,7 +19,7 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Viranda Project <nauka.pro2021@gmail.com>',
+        from: 'Viranda Project <send@viranda.org>',
         to: ['pavellob@gmail.com'],
         subject: 'Уведомление о заполнении формы обратной связи',
         html: `<body>

@@ -63,7 +63,6 @@ const ShowOrderForm: React.FC<FormProps & { title: string}> = ({
     options: Option[]
   }) {
     let id = useId()
-
     return (
       <div className="group relative z-0 transition-all focus-within:z-10">
         <select
@@ -121,7 +120,7 @@ const ShowOrderForm: React.FC<FormProps & { title: string}> = ({
             label="Шоу"
             name="show"
             options={orderOptions || []}
-            value={formData.show}
+            value={ formData.show }
             onChange={(e) => onInputChange('show', e.target.value)}
           />}
           <TextInput
