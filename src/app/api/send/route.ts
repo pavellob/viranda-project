@@ -7,10 +7,9 @@ export const dynamic = 'force-dynamic'
 const RESEND_API_KEY = 're_LnNSUqB2_86WXGya7hWjrMBpWboSDKGiW'
 
 export async function POST(req: Request) {
-  console.log("FFFFFF")
   try {
     // Get the body from the request
-    const { name, email, budget, phone, message } = await req.json()
+    const { name, email, show, phone, message } = await req.json()
     // Make a POST request to Resend API
     const resendApiUrl = 'https://api.resend.com/emails'
 
@@ -21,7 +20,7 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Acme <onboarding@resend.dev>',
+        from: 'Viranda Project <nauka.pro2021@gmail.com>',
         to: ['pavellob@gmail.com'],
         subject: 'Уведомление о заполнении формы обратной связи',
         html: `<body>
@@ -34,7 +33,7 @@ export async function POST(req: Request) {
           <li><strong>Email:</strong> ${email}</li>
           <li><strong>Телефон:</strong> ${phone}</li>
           <li><strong>Сообщение:</strong> ${message}</li>
-          <li><strong>Бюджет:</strong> ${budget}</li>
+          <li><strong>Шоу:</strong> ${show}</li>
         </ul>
       
         <p>Не забудьте связаться с клиентом как можно скорее!</p>
@@ -42,12 +41,10 @@ export async function POST(req: Request) {
       }),
     })
 
-    // Check if the request was successful
     if (response.ok) {
       const responseData = await response.json()
       return NextResponse.json(responseData)
     } else {
-      // Handle error if the request was not successful
       const errorData = await response.json()
       return NextResponse.json(errorData)
     }

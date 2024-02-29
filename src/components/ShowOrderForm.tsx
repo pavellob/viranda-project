@@ -4,6 +4,7 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import { FadeIn } from './FadeIn'
 import { Button } from './Button'
 import withContactFormHandler, { FormProps } from './withContactFormHandler'
+import { Option } from '@/lib/types'
 
 function TextInput({
   label,
@@ -49,6 +50,7 @@ function RadioInput({
 const ShowOrderForm: React.FC<FormProps & { title: string}> = ({
   title,
   formData,
+  orderOptions,
   onInputChange,
   onSubmit,
 }) => {
@@ -58,7 +60,7 @@ const ShowOrderForm: React.FC<FormProps & { title: string}> = ({
     ...props
   }: React.ComponentPropsWithoutRef<'select'> & {
     label: string
-    options: {label: string, value: string}[]
+    options: Option[]
   }) {
     let id = useId()
 
@@ -70,7 +72,7 @@ const ShowOrderForm: React.FC<FormProps & { title: string}> = ({
           className="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl"
         >
           {options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option key={option.value} value={option.value} selected={option.selected}>
               {option.label}
             </option>
           ))}
@@ -115,16 +117,13 @@ const ShowOrderForm: React.FC<FormProps & { title: string}> = ({
             value={formData.phone}
             onChange={(e) => onInputChange('phone', e.target.value)}
           />
-          <DropdownInput
+          {orderOptions  && <DropdownInput
             label="Шоу"
             name="show"
-            options={[{
-                label: "Крио-Шоу",
-                value: "crio-show"
-            }]}
+            options={orderOptions || []}
             value={formData.show}
             onChange={(e) => onInputChange('show', e.target.value)}
-          />
+          />}
           <TextInput
             label="Сообщение"
             name="message"

@@ -1,4 +1,4 @@
-import { loadShowCases } from '@/lib/mdx'
+import { Option } from '@/lib/types'
 import { useSearchParams } from 'next/navigation' // Import useSearchParams from 'next/router'
 import React, { useEffect, useState } from 'react'
 
@@ -7,6 +7,7 @@ export type FormData = {
 }
 
 export type FormProps = {
+  orderOptions?: Option[]
   formData: FormData
   onInputChange: (name: string, value: string) => void
   onSubmit: () => void
@@ -31,7 +32,6 @@ async function postData(formValues: FormData) {
 
   if (response.ok) {
     const result = await response.json()
-    console.log('result', result)
   } else {
     console.error('Failed to post data')
   }
@@ -80,6 +80,7 @@ const withSubmitAction = <P extends FormProps>(
     }
 
     const p = {
+      orderOptions : props.orderOptions,
       onInputChange: handleInputChange,
       formData,
       onSubmit: handleSubmit,

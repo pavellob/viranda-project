@@ -102,9 +102,54 @@ export const show = {
 };
 
 
+
+export const orderOptions = [
+  {
+    label: "Крио-Шоу",
+    value: "crio"
+  },
+  {
+    label: "Антистресс",
+    value: "antistress",
+  },
+  {
+    label: "Мастер класс «Коктели»",
+    value: "cocktail"
+  },
+  {
+    label: "Мастер класс «Фонтаны»",
+    value: "fountain"
+  },
+  {
+    label: "Азот Шоу",
+    selected: true,
+    value: "nitrogen"
+  },
+  {
+    label: "Научное Шоу",
+    value: "scienceShow"
+  },
+  {
+    label: "Мастер класс «Слаймы»",
+    value: "slime"
+  },
+  {
+    label: "Шоу газировка",
+    value: "sodaWater"
+  },
+  {
+    label: "Мастер класс «Ультрафиолет»",
+    value: "ultraviolet"
+  },
+  {
+    label: "Мастер-класс «Вулканы»",
+    value: "voolcano"
+  },
+]
+
 export const metadata = {
   title: `${show.item.name} Шоу`,
   description: show.description,
 }
 
-<Show show={show} />
+<Show show={show} orderOptions={orderOptions}/>

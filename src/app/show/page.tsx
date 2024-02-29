@@ -1,15 +1,8 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
 
-import { Border } from '@/components/Border'
-import { Button } from '@/components/Button'
 import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
-import { formatDate } from '@/lib/formatDate'
-import { MDXEntry, loadArticles, loadShowCases } from '@/lib/mdx'
+import { MDXEntry, loadShowCases } from '@/lib/mdx'
 import { Show, ShowEventProduct } from '@/lib/types'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 

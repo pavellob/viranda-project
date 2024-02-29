@@ -62,9 +62,54 @@ updatedAt: '2024-01-22T13:30:00Z', // Replace with the actual value
 deletedAt: null, // Replace with the actual value if applicable
 }
 
+
+export const orderOptions = [
+  {
+    label: "Крио-Шоу",
+    value: "crio"
+  },
+  {
+    label: "Антистресс",
+    value: "antistress",
+  },
+  {
+    label: "Мастер класс «Коктели»",
+    selected: true,
+    value: "cocktail"
+  },
+  {
+    label: "Мастер класс «Фонтаны»",
+    value: "fountain"
+  },
+  {
+    label: "Азот Шоу",
+    value: "nitrogen"
+  },
+  {
+    label: "Научное Шоу",
+    value: "scienceShow"
+  },
+  {
+    label: "Мастер класс «Слаймы»",
+    value: "slime"
+  },
+  {
+    label: "Шоу газировка",
+    value: "sodaWater"
+  },
+  {
+    label: "Мастер класс «Ультрафиолет»",
+    value: "ultraviolet"
+  },
+  {
+    label: "Мастер-класс «Вулканы»",
+    value: "voolcano"
+  },
+]
+
 export const metadata = {
   title: `${show.item.name} Шоу`,
   description: show.description,
 }
 
-<Show show={show} />
+<Show show={show} orderOptions={orderOptions}/>

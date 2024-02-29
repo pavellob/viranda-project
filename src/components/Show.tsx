@@ -5,7 +5,7 @@ import { Fragment, useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Tab } from '@headlessui/react'
 import { OrderDialog } from './OrderDialog'
-import { ShowEventProduct } from '@/lib/types'
+import { Option, ShowEventProduct } from '@/lib/types'
 import { GrayscaleTransitionImage } from './GrayscaleTransitionImage'
 import { LinkIcon } from '@heroicons/react/24/outline'
 import ImageList from './ImageList'
@@ -29,7 +29,7 @@ function copyLink() {
 }
 
 
-export function Show({ show, orderOptions }: { show: ShowEventProduct, orderOptions: any }) {
+export function Show({ show, orderOptions }: { show: ShowEventProduct, orderOptions: Option[] }) {
   const [open, setOpen] = useState(false)
   const reviewsAverage =
     show.reviews.reduce((sum, review) => {
@@ -39,7 +39,7 @@ export function Show({ show, orderOptions }: { show: ShowEventProduct, orderOpti
 
   return (
     <div>
-      <OrderDialog isOpen={open} onClose={() => setOpen(false)}/>
+      <OrderDialog isOpen={open} onClose={() => setOpen(false)} orderOptions={orderOptions}/>
       <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         {/* Product */}
         <div className="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
