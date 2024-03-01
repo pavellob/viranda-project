@@ -56,10 +56,12 @@ export function Show({ show, orderOptions }: { show: ShowEventProduct, orderOpti
           {/* Product details */}
           <div className="mx-auto mt-14 max-w-2xl sm:mt-16 lg:col-span-3 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none">
             <div className="flex flex-col-reverse">
-              <div className="mt-4">
-                <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+              <div className="mt-4 flex flex-row">
+                <h1 className="flex grow text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                   {show.item.name}
+
                 </h1>
+                <LinkIcon className="flex grow-1 h-6 w-6 items-center justify-left text-gray-400 hover:text-gray-500 hover:cursor-pointer" title="Копировать ссылку" onClick={copyLink} type='button'/> 
 
                 <h2 id="information-heading" className="sr-only">
                   Описание
@@ -120,8 +122,7 @@ export function Show({ show, orderOptions }: { show: ShowEventProduct, orderOpti
             </div>
 
             <div className="mt-10 border-t border-gray-200 pt-10">
-              <h3 className="text-sm font-medium text-gray-900">Поделиться</h3>
-              <LinkIcon className="flex h-6 w-6 items-center justify-center text-gray-400 hover:text-gray-500 hover:cursor-pointer" onClick={copyLink}/> 
+              {/* <h3 className="text-sm font-medium text-gray-900">Поделиться</h3> */}
             </div>
           </div>
 
