@@ -23,7 +23,7 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 interface Page {
   href: string
-  createdAt: string
+  createdAt?: string
   title: string
   description: string
 }
@@ -51,12 +51,12 @@ function PageLink({ page }: { page: Page }) {
         <h3 className="mt-6 text-base font-semibold text-neutral-950">
           {page.title}
         </h3>
-        <time
+        { page.createdAt && <time
           dateTime={page.createdAt}
           className="order-first text-sm text-neutral-600"
         >
           {formatDate(page.createdAt)}
-        </time>
+        </time>}
         <p className="mt-2.5 text-base text-neutral-600">{page.description}</p>
         <Link
           href={page.href}
@@ -83,9 +83,9 @@ function PageLinkWithImgBackground({ page }: { page: PageWithImg }){
     <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
     <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-      <time dateTime={page.createdAt} className="mr-8">
+      { page.createdAt && <time dateTime={page.createdAt} className="mr-8">
        {formatDate(page.createdAt)}
-      </time>
+      </time> }
     </div>
     <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
       <a href={page.href}>
