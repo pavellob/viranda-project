@@ -28,6 +28,7 @@ import {
   loadShowCases,
 } from '@/lib/mdx'
 import { PageLinks, PageType } from '@/components/PageLinks'
+import { ShowEventProduct } from '@/lib/types'
 
 const clients = [
   ['Phobia', logoPhobiaLight],
@@ -197,7 +198,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)
   let blogArticles = (await loadArticles()).slice(0, 2)
-  let shows = (await loadShowCases()).slice(0, 3).map((show) => {
+  let shows = (await loadShowCases()).slice(0, 3).map((show: ShowEventProduct) => {
     return {
       href: show.item.href,
       title: show.item.name,
