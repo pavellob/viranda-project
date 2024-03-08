@@ -90,13 +90,13 @@ export default async function Show() {
         className="mt-24 sm:mt-32 lg:mt-40"
       />
 
-      <ShowCases showProducts={showProducts.filter((p) => p.item.type === "show")} />
+      <ShowCases showProducts={showProducts.filter((p: ShowEventProduct) => p.item.type === "show")} />
 
       <SectionIntro
         title="Мастер-классы"
       />
 
-      <ShowCases showProducts={showProducts.filter((p) => p.item.type === "workshop")} />
+      <ShowCases showProducts={showProducts.filter((p: ShowEventProduct) => p.item.type === "workshop")} />
 
       <ContactSection />
     </>
