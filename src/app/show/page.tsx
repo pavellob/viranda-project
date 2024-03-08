@@ -5,6 +5,7 @@ import { PageIntro } from '@/components/PageIntro'
 import { MDXEntry, loadShowCases } from '@/lib/mdx'
 import { Show, ShowEventProduct } from '@/lib/types'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
+import { SectionIntro } from '@/components/SectionIntro'
 
 export const metadata: Metadata = {
   title: 'Научные шоу и Мастер-классы',
@@ -76,13 +77,26 @@ export default async function Show() {
           более 10 лет — наша команда знает, как сделать праздник интересным для
           каждого! Программа шоу разработана таким образом, чтобы не только
           радовать зрителей яркими спецэффектами, но и обучать их новому,
-          стимулировать исследовательский интерес и научное любопытство.
-          Мастер-классы и шоу Viranda project развивают в детях
+          стимулировать исследовательский интерес и научное любопытство. 
+          <br/><strong>Шоу</strong> мы показываем на столе и по очереди приглашаем детей помогать. 
+          <br/><strong>Мастер-класс</strong> — все дети сидят за столом и каждый сам проводит опыт (одновременно).
+          <br/>Мастер-классы и шоу Viranda project развивают в детях
           наблюдательность, логическое мышление и коммуникативные навыки.
         </p>
       </PageIntro>
 
-      <ShowCases showProducts={showProducts} />
+      <SectionIntro
+        title="Шоу"
+        className="mt-24 sm:mt-32 lg:mt-40"
+      />
+
+      <ShowCases showProducts={showProducts.filter((p) => p.item.type === "show")} />
+
+      <SectionIntro
+        title="Мастер-классы"
+      />
+
+      <ShowCases showProducts={showProducts.filter((p) => p.item.type === "workshop")} />
 
       <ContactSection />
     </>

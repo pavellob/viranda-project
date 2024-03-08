@@ -123,6 +123,8 @@ export type Lesson = IMetaNode & {
 export type Show = IMetaNode & {
   __typename?: 'Show'
   id: Scalars['UUID']['output']
+  index: Scalars['Int']['output']
+  type: 'show' | 'workshop'
   name: Scalars['String']['output']
   description: Scalars['String']['output']
   minCapacity: Scalars['Int']['output']
@@ -212,6 +214,7 @@ export type LessonEventProduct = IEventProduct & {
 export type ShowEventProduct = IEventProduct & {
   __typename?: 'ShowEventProduct'
   id: Scalars['UUID']['output']
+
   item: Show
   event: Event
   product: Product

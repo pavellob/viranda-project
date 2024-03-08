@@ -43,6 +43,8 @@ export interface CaseStudy {
   createdAt: string
   client: string
   title: string
+  index: number
+  type: "show" | "workshop"
   description: string
   summary: Array<string>
   logo: ImageProps['src']
@@ -62,12 +64,12 @@ export function loadArticles() {
 }
 
 export function loadCaseStudies() {
-  return loadEntries<CaseStudy>('work', 'caseStudy')
+  return loadEntries<CaseStudy>('work', 'caseStudy').then(cases => cases.toSorted((c1, c2)=> c1.index - c2.index))
 }
 
 
 export function loadShowCases() {
-  return loadEntries<ShowEventProduct>('show', 'show')
+  return loadEntries<ShowEventProduct>('show', 'show').then(cases => cases.toSorted((c1, c2)=> c1.item?.index - c2.item?.index))
 }
 
 

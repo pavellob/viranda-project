@@ -4,6 +4,8 @@ export const show = {
   item: {
     id: 'sodaWater',
     name: 'Шоу газировка',
+    type: "show",
+    index: 13,
     description:
       'Научное шоу «Газировка»: исследуем газированные напитки в действии! Запустим фонтан из Кока-колы и Ментоса: у кого получится самый высокий? Самостоятельно газируем любимые напитки разными способами. В ходе экспериментов найдём лучший метод: шипучка, сифон или сухой лед.',
     minAge: 4,
@@ -121,48 +123,47 @@ updatedAt: '2024-01-22T13:30:00Z', // Replace with the actual value
 deletedAt: null, // Replace with the actual value if applicable
 }
 
-
 export const orderOptions = [
   {
-    label: "Крио-Шоу",
-    value: "crio"
+    label: 'Крио-Шоу',
+    value: 'crio',
   },
   {
-    label: "Антистресс",
-    value: "antistress",
+    label: 'Антистресс',
+    value: 'antistress',
   },
   {
-    label: "Мастер класс «Коктели»",
-    value: "cocktail"
+    label: 'Мастер класс «Коктели»',
+    value: 'cocktail',
   },
   {
-    label: "Мастер класс «Фонтаны»",
-    value: "fountain"
+    label: 'Мастер класс «Фонтаны»',
+    value: 'fountain',
   },
   {
-    label: "Азот Шоу",
-    value: "nitrogen"
+    label: 'Азот Шоу',
+    value: 'nitrogen',
   },
   {
-    label: "Научное Шоу",
-    value: "scienceShow"
+    label: 'Научное Шоу',
+    value: 'scienceShow',
   },
   {
-    label: "Мастер класс «Слаймы»",
-    value: "slime"
+    label: 'Мастер класс «Слаймы»',
+    value: 'slime',
   },
   {
-    label: "Шоу газировка",
+    label: 'Шоу газировка',
     selected: true,
-    value: "sodaWater"
+    value: 'sodaWater',
   },
   {
-    label: "Мастер класс «Ультрафиолет»",
-    value: "ultraviolet"
+    label: 'Мастер класс «Ультрафиолет»',
+    value: 'ultraviolet',
   },
   {
-    label: "Мастер-класс «Вулканы»",
-    value: "voolcano"
+    label: 'Мастер-класс «Вулканы»',
+    value: 'voolcano',
   },
 ]
 
@@ -171,4 +172,4 @@ export const metadata = {
   description: show.description,
 }
 
-<Show show={show} orderOptions={orderOptions}/>
+<Show show={show} orderOptions={orderOptions} />
