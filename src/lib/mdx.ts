@@ -64,12 +64,12 @@ export function loadArticles() {
 }
 
 export function loadCaseStudies() {
-  return loadEntries<CaseStudy>('work', 'caseStudy').then((cases: Array<MDXEntry<CaseStudy>>) => (cases as Array<MDXEntry<CaseStudy>>).toSorted((c1, c2)=> c1.index - c2.index))
+  return loadEntries<CaseStudy>('work', 'caseStudy').then((cases: Array<MDXEntry<CaseStudy>>) => cases.sort((c1, c2)=> c1.index - c2.index))
 }
 
 
 export function loadShowCases() {
-  return loadEntries<ShowEventProduct>('show', 'show').then((cases: Array<MDXEntry<ShowEventProduct>>) => (cases as Array<MDXEntry<ShowEventProduct>>).toSorted((c1, c2)=> c1.item?.index - c2.item?.index))
+  return loadEntries<ShowEventProduct>('show', 'show').then((cases: Array<MDXEntry<ShowEventProduct>>) => cases.sort((c1, c2)=> c1.item?.index - c2.item?.index))
 }
 
 
