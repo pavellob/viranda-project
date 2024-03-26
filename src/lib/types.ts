@@ -83,6 +83,7 @@ export type Event = IEvent & {
   __typename?: 'Event'
   id: Scalars['UUID']['output']
   name: Scalars['String']['output']
+  calComLink: Scalars['String']['output']
   description?: Maybe<Scalars['String']['output']>
   date: Scalars['String']['output']
   startTime: Scalars['Time']['output']

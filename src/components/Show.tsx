@@ -11,6 +11,7 @@ import { LinkIcon } from '@heroicons/react/24/outline'
 import ImageList from './ImageList'
 import { Button } from './Button'
 import {FormData} from './withContactFormHandler';
+import CalComButton from './CalComButton'
 
 
 function classNames(...classes: string[]) {
@@ -91,12 +92,12 @@ export function Show({ show, orderOptions }: { show: ShowEventProduct, orderOpti
             <p className="mt-6 text-gray-500">{show.item.description}</p>
 
             <div className="mt-10 flex gap-x-6 gap-y-4 s">
-              <Button onClick={() => {
-                  setOpen(true)
-                }}
-                title='Заказать шоу'>
+              <CalComButton 
+                dataCalLink={show.event.calComLink}
+                title='Заказать шоу'
+                >
                   Заказать шоу
-                </Button>
+                </CalComButton>
             </div>
 
             <div className="mt-10 border-t border-gray-200 pt-10">

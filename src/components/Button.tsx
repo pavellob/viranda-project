@@ -22,19 +22,18 @@ export function Button({
       : 'bg-indigo-500 text-white hover:bg-indigo-200',
   )
 
-  let inner = <span className="relative top-px">{children}</span>
 
   if (typeof props.href === 'undefined') {
     return (
       <button className={className} {...props}>
-        {inner}
+        <span className="relative top-px" {...props}>{children}</span>
       </button>
     )
   }
 
   return (
     <Link className={className} {...props}>
-      {inner}
+        <span className="relative top-px" {...props}>{children}</span>
     </Link>
   )
 }
