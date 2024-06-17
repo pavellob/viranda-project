@@ -3,7 +3,7 @@ import { type Metadata } from 'next'
 import { ContactSection } from '@/components/ContactSection'
 import { PageIntro } from '@/components/PageIntro'
 import { MDXEntry, loadShowCases } from '@/lib/mdx'
-import { Show, ShowEventProduct } from '@/lib/types'
+import { ShowEventProduct } from '@/lib/types'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { SectionIntro } from '@/components/SectionIntro'
 
@@ -51,7 +51,7 @@ function ShowCases({
                     - {product.item.maxAge} лет{' '}
                   </p>
                   <p className="text-base font-medium text-gray-900">
-                    {product.product.price}฿
+                    {product.product.price}₽
                   </p>
                 </div>
               </div>
