@@ -7,7 +7,7 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s - Viranda project',
-    default: 'Viranda - Развивающие программы и умные детские праздники  на Пхукете. Профессор Супер Гуд',
+    default: 'Viranda - Развивающие программы и умные детские праздники. Профессор Супер Гуд',
   },
 }
 

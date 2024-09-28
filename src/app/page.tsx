@@ -158,8 +158,8 @@ function Services() {
               организациями, а также организуем праздники «под ключ».
             </ListItem>
             <ListItem title="Дополнительное образование">
-              20 секций дополнительного образования для детей и подростков на
-              острове Пхукет! Обучение в рамках STEAM (Science, Technology,
+              20 секций дополнительного образования для детей и подростков! 
+              Обучение в рамках STEAM (Science, Technology,
               Engineering, Art, Mathematics): секции по робототехнике,
               3D-моделированию, программированию, дизайну, специальный авторский
               курс «Потомучки» и многое другое. Мы сотрудничаем с
@@ -192,7 +192,7 @@ function Services() {
 
 export const metadata: Metadata = {
   description:
-    'Создаем среду, где дети учатся, играя. Уникальные умные празники и научное шоу на Пхукете и Санкт-Петербурге. Дополнительне образование по STEAM',
+    'Создаем среду, где дети учатся, играя. Уникальные умные празники и научное шоу в Санкт-Петербурге. Дополнительне образование по STEAM',
 }
 
 export default async function Home() {
@@ -212,7 +212,7 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-6xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Умные детские праздники и развивающие программы на Пхукете
+            Умные детские праздники и развивающие программы
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
           Мы создаем условия, в которых дети получают актуальные знания о мире в рамках STEAM-подхода. Дружелюбно и в игровой форме.
@@ -224,7 +224,7 @@ export default async function Home() {
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
         title="Шоу и воркшопы"
-        intro="Мы делаем самые веселые умные праздники на Пхукете"
+        intro="Мы делаем самые веселые умные праздники"
         type={PageType.ImgBackground}
         pages={shows}
       />

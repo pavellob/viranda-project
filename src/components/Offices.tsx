@@ -33,9 +33,9 @@ export function Offices({
     <ul role="list" {...props}>
       <li>
         <Office name="Phuket" invert={invert}>
-          14/58 Ekandaburi
+          Гатчинская улица, 28, БЦ Печатный двор, офис 5к307
           <br />
-          83130, Phuket, Chalong, Thailand
+          197110, Санкт-Петербург, Петроградский остров, Россия
         </Office>
       </li>
       {/* <li>
@@ -47,7 +47,7 @@ export function Offices({
       </li> */}
       <li>
         <Office name="Phone" invert={invert}>
-          +66 0838406145
+          +7 931 3586101
         </Office>
       </li>
       <li>
